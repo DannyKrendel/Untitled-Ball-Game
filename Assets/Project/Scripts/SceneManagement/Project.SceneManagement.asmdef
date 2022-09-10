@@ -1,0 +1,16 @@
+{
+    "name": "Project.SceneManagement",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4a8ee20b4ba0b664ca47947a4eff7aa2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
