@@ -27,7 +27,7 @@ namespace Project.UI
         private InputManager _inputManager;
         private Player _player;
         private bool _grabStarted;
-        private Vector2 _center;
+        private Vector2 _defaultPosition;
         private float _maxGrabDistance;
         private float _halfAngleRange;
         private Vector2 _minDirection;
@@ -59,7 +59,7 @@ namespace Project.UI
         {
             var rectTransform = GetComponent<RectTransform>();
             _maxGrabDistance = rectTransform.sizeDelta.x / 2;
-            _center = _handle.position;
+            _defaultPosition = transform.position;
 
             yield return new WaitWhile(() =>
             {
@@ -82,8 +82,10 @@ namespace Project.UI
 
             var screenPosition = _inputManager.TouchPosition;
 
-            if (!IsObjectClicked(screenPosition, _handle.gameObject)) return;
+            if (!IsPositionInsideRectTransform(screenPosition, _jumpZone)) return;
 
+            transform.position = screenPosition;
+            
             OnJumpCalculationStarted();
         }
     
@@ -91,7 +93,7 @@ namespace Project.UI
         {
             var screenPosition = _inputManager.TouchPosition;
 
-            CurrentJumpDirection = ClampDirection(Vector2.ClampMagnitude(_center - screenPosition, _maxGrabDistance));
+            CurrentJumpDirection = ClampDirection(Vector2.ClampMagnitude((Vector2)transform.position - screenPosition, _maxGrabDistance));
             CurrentJumpPower = CalculateJumpPower(CurrentJumpDirection.magnitude);
         
             _handle.anchoredPosition = -CurrentJumpDirection;
@@ -104,7 +106,9 @@ namespace Project.UI
             CurrentJumpPower = CalculateJumpPower(CurrentJumpDirection.magnitude);
         
             _player.Jump(CurrentJumpDirection.normalized, CurrentJumpPower);
-        
+
+            transform.position = _defaultPosition;
+            
             OnJumpCalculationEnded();
         }
     
@@ -125,18 +129,6 @@ namespace Project.UI
             return direction;
         }
 
-        private bool IsObjectClicked(Vector2 position, GameObject obj)
-        {
-            var pointer = new PointerEventData(EventSystem.current);
-            var raycastResult = new List<RaycastResult>();
-        
-            pointer.position = position;
-        
-            EventSystem.current.RaycastAll(pointer, raycastResult);
-
-            return raycastResult.Any(result => result.gameObject == obj);
-        }
-
         private void OnJumpCalculationStarted()
         {
             _grabStarted = true;
@@ -150,6 +142,12 @@ namespace Project.UI
             CurrentJumpPower = 0;
             _grabStarted = false;
             JumpCalculationEnded?.Invoke();
+        }
+        
+        private static bool IsPositionInsideRectTransform(Vector2 position, RectTransform rectTransform)
+        {
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, position, null, out var localPoint);
+            return rectTransform.rect.Contains(localPoint);
         }
     }
 }
