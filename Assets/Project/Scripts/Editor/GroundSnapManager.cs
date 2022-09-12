@@ -62,11 +62,9 @@ namespace Project.Editor
                     if (!ground) continue;
                     
                     var dragPos = _startSelectedPositions[i] + dragDelta;
-                    
-                    var groundRenderer = ground.GetComponent<Renderer>();
-                    var snappedPos = groundRenderer.bounds.ClosestPoint(dragPos);
-                    
-                    Debug.Log($"world: {dragPos}; snapped: {snappedPos}");
+
+                    var collider = ground.GetComponent<Collider2D>();
+                    var snappedPos = collider.bounds.ClosestPoint(dragPos);
 
                     if (Vector2.Distance(dragPos, snappedPos) < 1f)
                         transform.position = snappedPos;
