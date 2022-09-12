@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 47619834983249576}
   - component: {fileID: 47619834983249583}
   - component: {fileID: 47619834983249577}
+  - component: {fileID: 6397728052140705012}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
@@ -91,7 +92,7 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 1b2585df7d0544e4180217f89ca9f42b, type: 3}
   m_LocalAABB:
     m_Center: {x: 2.5000002, y: 2.5000002, z: 0}
-    m_Extent: {x: 2.7500002, y: 2.7500002, z: 0}
+    m_Extent: {x: 2.5833337, y: 2.5833337, z: 0}
 --- !u!114 &47619834983249583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,10 +189,23 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 5.25, y: -0.2500001}
-      - {x: -0.2500001, y: -0.25}
-      - {x: -0.25, y: 5.25}
-      - {x: 5.25, y: 5.25}
-      - {x: 5.25, y: 0.30733335}
-      - {x: 5.25, y: 0.25}
-      - {x: 5.25, y: -0.2500001}
+    - - {x: 5.083334, y: -0.08333345}
+      - {x: -0.08333345, y: -0.083333336}
+      - {x: -0.083333336, y: 5.0833335}
+      - {x: 5.0833335, y: 5.083334}
+      - {x: 5.083334, y: 0.14491326}
+      - {x: 5.083334, y: 0.083333015}
+      - {x: 5.083334, y: -0.08333345}
+--- !u!114 &6397728052140705012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47619834983249581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9226b4653b8343cfb14508a3cf8ecced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 0
