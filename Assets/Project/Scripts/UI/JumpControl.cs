@@ -82,7 +82,7 @@ namespace Project.UI
 
             var screenPosition = _inputManager.TouchPosition;
 
-            if (!IsPositionInsideRectTransform(screenPosition, _jumpZone)) return;
+            if (!CanClickOnJumpZone(screenPosition)) return;
 
             transform.position = screenPosition;
             
@@ -144,10 +144,14 @@ namespace Project.UI
             JumpCalculationEnded?.Invoke();
         }
         
-        private static bool IsPositionInsideRectTransform(Vector2 position, RectTransform rectTransform)
+        private bool CanClickOnJumpZone(Vector2 position)
         {
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, position, null, out var localPoint);
-            return rectTransform.rect.Contains(localPoint);
+            var pointer = new PointerEventData(EventSystem.current) { position = position };
+
+            var raycastResults = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointer, raycastResults);
+
+            return raycastResults.Count == 1 && raycastResults[0].gameObject == _jumpZone.gameObject;
         }
     }
 }
