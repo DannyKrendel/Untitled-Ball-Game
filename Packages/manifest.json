@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.polyternity.stuff": "file:C:/Unity Packages/Polyternity Stuff",
     "com.unity.adaptiveperformance": "3.0.2",
     "com.unity.adaptiveperformance.samsung.android": "3.0.1",
     "com.unity.cinemachine": "2.8.6",

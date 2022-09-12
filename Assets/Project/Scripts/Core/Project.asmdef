@@ -1,8 +1,8 @@
 {
-    "name": "Project.SceneManagement",
+    "name": "Project",
     "rootNamespace": "",
     "references": [
-        "GUID:4a8ee20b4ba0b664ca47947a4eff7aa2"
+        "GUID:94657ef60c7b88f46bca2f127588fd31"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

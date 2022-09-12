@@ -2,9 +2,10 @@
     "name": "Project.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:9683cc79f5aeef34fb4c2febf10fea62",
         "GUID:4a8ee20b4ba0b664ca47947a4eff7aa2",
-        "GUID:27c8deca2f41d394da361fa6e7990e57"
+        "GUID:27c8deca2f41d394da361fa6e7990e57",
+        "GUID:94657ef60c7b88f46bca2f127588fd31",
+        "GUID:e659ab36cee33a64d885c4fb5a850b96"
     ],
     "includePlatforms": [
         "Editor"

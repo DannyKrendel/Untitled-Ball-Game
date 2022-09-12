@@ -1,6 +1,7 @@
+using PolyternityStuff.SceneManagement;
 using UnityEngine;
 
-namespace Project.SceneManagement
+namespace Project
 {
     public class Preload : MonoBehaviour
     {
