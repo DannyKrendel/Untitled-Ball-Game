@@ -63,8 +63,8 @@ namespace Project.Editor
                     
                     var dragPos = _startSelectedPositions[i] + dragDelta;
                     
-                    var groundSprite = ground.GetComponent<SpriteRenderer>();
-                    var snappedPos = groundSprite.bounds.ClosestPoint(dragPos);
+                    var groundRenderer = ground.GetComponent<Renderer>();
+                    var snappedPos = groundRenderer.bounds.ClosestPoint(dragPos);
                     
                     Debug.Log($"world: {dragPos}; snapped: {snappedPos}");
 
