@@ -1,4 +1,3 @@
-using PolyternityStuff.SceneManagement;
 using Project.Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +20,7 @@ namespace Project.UI
 
         private void OnMainMenuButtonPressed()
         {
-            GameManager.IsPaused = false;
+            GameState.IsPaused = false;
             StartCoroutine(FindObjectOfType<GameSceneManager>().LoadMainMenu());
         }
     }

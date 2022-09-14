@@ -17,7 +17,7 @@ namespace Project.Gameplay
 
         public void Set(Vector2 direction, float power)
         {
-            if (GameManager.IsPaused || !_player.IsGrounded() || _player.Velocity > 0) return;
+            if (GameState.IsPaused || !_player.IsGrounded() || _player.Velocity > 0) return;
         
             if (!_calculationStarted) OnCalculationStarted();
         

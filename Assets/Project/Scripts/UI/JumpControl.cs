@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Project.Gameplay;
 using Project.Input;
 using UnityEngine;
@@ -70,7 +69,7 @@ namespace Project.UI
 
         private void Update()
         {
-            if (GameManager.IsPaused || !_grabStarted || !_inputManager.PlayerControlsEnabled)
+            if (GameState.IsPaused || !_grabStarted || !_inputManager.PlayerControlsEnabled)
                 return;
         
             OnFingerMove();
@@ -78,7 +77,7 @@ namespace Project.UI
 
         private void OnFingerDown()
         {
-            if (GameManager.IsPaused || _grabStarted || !_player.IsGrounded()) return;
+            if (GameState.IsPaused || _grabStarted || !_player.IsGrounded()) return;
 
             var screenPosition = _inputManager.TouchPosition;
 
@@ -101,7 +100,7 @@ namespace Project.UI
 
         private void OnFingerUp()
         {
-            if (GameManager.IsPaused || !_grabStarted) return;
+            if (GameState.IsPaused || !_grabStarted) return;
         
             CurrentJumpPower = CalculateJumpPower(CurrentJumpDirection.magnitude);
         

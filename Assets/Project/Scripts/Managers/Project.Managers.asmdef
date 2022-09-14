@@ -1,8 +1,9 @@
 {
-    "name": "Project",
+    "name": "Project.Managers",
     "rootNamespace": "",
     "references": [
-        "GUID:94657ef60c7b88f46bca2f127588fd31"
+        "GUID:94657ef60c7b88f46bca2f127588fd31",
+        "GUID:27c8deca2f41d394da361fa6e7990e57"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

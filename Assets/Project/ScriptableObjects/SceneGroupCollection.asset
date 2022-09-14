@@ -13,18 +13,17 @@ MonoBehaviour:
   m_Name: SceneGroupCollection
   m_EditorClassIdentifier: 
   _sceneGroups:
-  - Name: Core
-    IsPersistent: 1
-    Scenes:
-    - _sceneAsset: {fileID: 102900000, guid: 7de8aa95ce5059f4a82a0c0391790c15, type: 3}
-      _scenePath: Assets/Project/Scenes/Core.unity
-  - Name: Main Menu
-    IsPersistent: 0
+  - Name: MainMenu
     Scenes:
     - _sceneAsset: {fileID: 102900000, guid: 3fc8acdd13e6c734bafef6554d6fdbcd, type: 3}
       _scenePath: Assets/Project/Scenes/MainMenu.unity
-  - Name: Level
-    IsPersistent: 0
+    - _sceneAsset: {fileID: 102900000, guid: 7de8aa95ce5059f4a82a0c0391790c15, type: 3}
+      _scenePath: Assets/Project/Scenes/Core.unity
+  - Name: Level 1
     Scenes:
+    - _sceneAsset: {fileID: 102900000, guid: eb2235f696d463046b103e4b834204b0, type: 3}
+      _scenePath: Assets/Project/Scenes/Levels/1.unity
+    - _sceneAsset: {fileID: 102900000, guid: 7de8aa95ce5059f4a82a0c0391790c15, type: 3}
+      _scenePath: Assets/Project/Scenes/Core.unity
     - _sceneAsset: {fileID: 102900000, guid: f8f17999c7253234b935b49762c3e51d, type: 3}
       _scenePath: Assets/Project/Scenes/UI.unity

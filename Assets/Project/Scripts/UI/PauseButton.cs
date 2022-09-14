@@ -26,15 +26,15 @@ namespace Project.UI
 
         private void OnPausePressed()
         {
-            if (GameManager.IsPaused)
+            if (GameState.IsPaused)
             {
                 _pauseScreen.Hide();
-                GameManager.IsPaused = false;
+                GameState.IsPaused = false;
             }
             else
             {
                 _pauseScreen.Show();
-                GameManager.IsPaused = true;
+                GameState.IsPaused = true;
             }
         }
     }
